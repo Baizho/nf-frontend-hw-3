@@ -15,7 +15,7 @@ export default function SearchItem() {
         ></Image>
         <form action="/searchResults/">
           <input
-            className="bg-gray-100 focus:outline-none placeholder:text-sm text-sm w-full mr-3"
+            className="bg-gray-100 focus:outline-none placeholder:text-sm text-sm w-full mr-3 focus:bg-gray-100"
             placeholder="Search..."
             name="q"
           ></input>

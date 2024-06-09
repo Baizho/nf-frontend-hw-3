@@ -42,6 +42,8 @@ export default function BlogListVertical({ extraurl }: Props) {
 
   if (load === false)
     return <div className="text-center font-bold">Loading...</div>;
+  if (posts.length === 0)
+    return <div className="text-center font-bold">No posts were found</div>;
   return (
     <div className="flex flex-col w-[55%] min-w-[500px] h-full">
       {posts.map((post: PostProps, index: number) => {

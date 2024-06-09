@@ -2,12 +2,17 @@
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import BlogListVertical from "@/components/BlogListVertical";
+import { useTheme } from "../context/ThemeContext";
 
-export default function tagPage() {
+export default function searchResultsPage() {
   const searchParams = useSearchParams();
   const filter = searchParams.get("q");
+  const { theme } = useTheme();
+  let color = "";
+  if (theme === "light") color = "white";
+  else color = "gray-400";
   return (
-    <>
+    <div className={`bg-${color} min-h-screen`}>
       <div className="text-center text-xl font-bold">
         {" "}
         Results of your search
@@ -16,6 +21,6 @@ export default function tagPage() {
         <BlogListVertical extraurl={"/search?q=" + filter} />
         {/* <div>Extra</div> */}
       </div>
-    </>
+    </div>
   );
 }
