@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import BlogListVertical from "@/components/BlogListVertical";
 import { useTheme } from "../context/ThemeContext";
 
-export default function searchResultsPage() {
+export default function SearchResultsPage() {
   const searchParams = useSearchParams();
   const filter = searchParams.get("q");
   const { theme } = useTheme();

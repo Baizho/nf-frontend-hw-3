@@ -54,7 +54,7 @@ const PostCard = ({ post }: Props) => {
         <div className="flex flex-wrap gap-3 mb-3">
           {post.tags.map((tag, index) => {
             return (
-              <Link href={`/tag/${tag}`}>
+              <Link key={index} href={`/tag/${tag}`}>
                 <span className="bg-gray-300 rounded-2xl text-sm text-black px-3 py-1">
                   {tag}
                 </span>

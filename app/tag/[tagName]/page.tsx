@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import BlogListVertical from "@/components/BlogListVertical";
 import { useTheme } from "@/app/context/ThemeContext";
 
-export default function tagPage() {
+export default function TagPage() {
   const { tagName } = useParams();
   const { theme } = useTheme();
   let color = "";
