@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Provider } from "./context/AuthContext";
 import { ProviderTheme } from "./context/ThemeContext";
 import ThemeToggleButton from "@/components/ThemeToggleButton";
+import { Suspense } from "react";
 import "./globals.css";
 
 import Header from "@/components/Header";
@@ -19,7 +20,9 @@ export default function RootLayout({
       <body className="min-h-screen">
         <Provider>
           <ProviderTheme>
-            <Header />
+            <Suspense>
+              <Header />
+            </Suspense>
             <div className="flex justify-center">
               <ThemeToggleButton />
             </div>
