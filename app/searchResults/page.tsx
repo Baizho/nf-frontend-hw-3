@@ -3,8 +3,9 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import BlogListVertical from "@/components/BlogListVertical";
 import { useTheme } from "../context/ThemeContext";
+import { Suspense } from "react";
 
-export default function SearchResultsPage() {
+function MiniSearch() {
   const searchParams = useSearchParams();
   const filter = searchParams.get("q");
   const { theme } = useTheme();
@@ -22,5 +23,13 @@ export default function SearchResultsPage() {
         {/* <div>Extra</div> */}
       </div>
     </div>
+  );
+}
+
+export default function SearchResultsPage() {
+  return (
+    <Suspense>
+      <MiniSearch />
+    </Suspense>
   );
 }
